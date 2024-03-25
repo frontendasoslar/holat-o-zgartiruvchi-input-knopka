@@ -1,0 +1,99 @@
+/* body klaslari */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #42a5f5;
+}
+
+/* Checkbox ko'rinmasligi uchun */
+.checkbox {
+  visibility: hidden;
+}
+
+/* Checkboxni o'rab turuvchi karobka uchun klaslar */
+.checkbox-group {
+  /* Bola elementlar o'rab turuvchi karobkaga nisbatan joylashishi uchun */
+  position: relative;
+  /* O'rab turuvchining o'lchamlar */
+  width: 86px;
+  height: 30px;
+  /* O'rab turuvchining orqa fon rangi */
+  background-color: #333;
+  /* O'rab turuvchining otrofi dumaloqlashishi uchun */
+  border-radius: 50px;
+  /* O'rab turuvchining soyasi */
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+/* orab turuvchi markazida kanalcha klaslari */
+.checkbox-group::after {
+  /* Har bir psevda element uchun kiritiladi */
+  content: '';
+  /* Markazda turuvchi kanalcha o'rab turuvchiga nisbatan joylashishi uchun */
+  position: absolute;
+  /* Kanalcha o'rab turuvchining markazida joylashishi uchun */
+  top: 14px;
+  left: 14px;
+  /* Kanalchani o'chami */
+  width: 56px;
+  height: 2px;
+  /* Kanalchaning rangi */
+  background-color: #111;
+  border-radius: 50px;
+  /* Kanalchaning soyasi */
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+/* Kanalcha ustidagi oq aylana uchun klaslar */
+.checkbox-label{
+  display: block;
+  /* Aylananing o'lchamlari */
+  width: 22px;
+  height: 22px;
+  /* Aylana qilish uchun */
+  border-radius: 50%;
+  /* Aylananing rangi */
+  background-color: #fff;
+  /* O'rab turuvchiga nisbatan joylashishi uchun va nmarkazda joylashishi uchun */
+  position: absolute;
+  top: 4px;
+  z-index: 1;
+  left: 4px;
+  /* Aylananing soyasi */
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  /* Aylananing gradient rangi */
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  /* Holat ozgartirishi uchun ketadigan vaqt */
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Oq aylananing barkazida kichikroq aylana hosil qilish uchun */
+.checkbox-label:after {
+  content: '';
+  /* Kichik aylanani o'lchamlari */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* kichik aylananing o'lchamlari */
+  background-color: #333;
+  position: absolute;
+  /* Oq aylanani o'rtasida joylashishi uchun */
+  top: 6px;
+  left: 6px;
+  /* Kichik aylananing soyasi */
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.9), 0px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Chekbox bosilganda aylana qarama-qarshi tomonga o'tishi uchun */
+.checkbox:checked + .checkbox-label {
+  left: 54px;
+}
+
+/* Chechbox bosilganda kichkina aylananing rang o'zgarishi uchun */
+.checkbox:checked + .checkbox-label:after {
+  background-color: #27ae60;
+}
